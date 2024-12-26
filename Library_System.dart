@@ -1,4 +1,5 @@
 void main(List<String> args) {
+  // examples
     var book_1= Books(1, "book one");
     var book_2= Books(2, "book two");
     var book_3= Books(3, "book three");
@@ -24,6 +25,7 @@ void main(List<String> args) {
 }
 
 
+// Book class
 class Books{
 
 int id;
@@ -31,37 +33,41 @@ String title;
 bool borrowed;
 
   Books(this.id,this.title,{this.borrowed=false});
+  // function to display info
    void displayInfo(){
 
     print("Your ID is: $id  Title is: $title  Borrowed Status : $borrowed");
    }
 
 }
-
+// users class
 class Users{
   int id;
   String name;
 
   Users(this.id,this.name);
 
+// function to display info
   void displayInfo(){
 
     print("Your ID  is: $id  And name is: $name");
    }
 }
 
+// library class
 class Library{
 
   List<Books> books;
   List<Users> users;
 
   Library(this.books,this.users);
-
+   
+   // this function add books
   void addBooks(Books book){
       books.add(book);
       print("Book is added!");
   }
-
+ // this function return books
   void returnBook(int bookId){
      for(var book in books){
       if(book.id ==bookId){
@@ -70,6 +76,7 @@ class Library{
       }
      }
   }
+  // this function let you borrow books and check the borrowed status of it
   void borrowBook(int bookId,int userId){
        for(var book in books){
       if(book.id ==bookId){
@@ -82,6 +89,7 @@ class Library{
       }
      }
   }
+   // display final info of all
   void displayFinalInfo(){
 
     for(var book in books){
